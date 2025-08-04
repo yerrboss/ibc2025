@@ -1,0 +1,591 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IBC 2025 Team Hub | Maps · Directions · Checklists</title>
+<style>
+:root{
+  --bg: #0b1220;
+  --bg-soft: #121a2a;
+  --card: rgba(255,255,255,0.06);
+  --border: rgba(255,255,255,0.12);
+  --text: #e6e8ee;
+  --muted: #b7bfd1;
+  --accent: #6ea8fe;
+  --accent-2: #8ef0d4;
+  --danger: #ff6b6b;
+  --shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background: radial-gradient(1200px 600px at 10% -10%, rgba(110,168,254,.18), transparent 50%),
+              radial-gradient(900px 500px at 110% 10%, rgba(142,240,212,.15), transparent 40%),
+              var(--bg);
+  color:var(--text);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, Noto Sans, "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", sans-serif;
+  line-height:1.6;
+}
+
+.container{max-width:1100px;margin:0 auto;padding:24px}
+.hero{
+  position:relative;
+  padding:48px 24px 32px;
+  background:
+    radial-gradient(800px 300px at 20% 0%, rgba(110,168,254,.25), transparent 60%),
+    linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02)),
+    var(--bg-soft);
+  border-bottom:1px solid var(--border);
+  box-shadow:var(--shadow);
+}
+.hero h1{
+  margin:0 0 6px 0;
+  font-size: clamp(28px, 4vw, 42px);
+  letter-spacing:.2px;
+}
+.hero p{margin:8px 0 16px;color:var(--muted)}
+
+.lang-switch{display:flex;gap:10px;align-items:center;margin:8px 0 14px}
+.lang-switch button{
+  border:1px solid var(--border);
+  background:transparent;
+  color:var(--text);
+  padding:8px 12px;border-radius:10px;
+  cursor:pointer;font-weight:600;
+  backdrop-filter: blur(6px);
+}
+.lang-switch button.active{background:var(--accent);border-color:var(--accent);color:#0a1220}
+
+nav{display:flex;gap:14px;flex-wrap:wrap}
+nav a{
+  color:var(--text);
+  text-decoration:none;
+  padding:8px 10px;
+  border-radius:8px;
+  border:1px solid transparent;
+}
+nav a:hover{border-color:var(--border);background:rgba(255,255,255,.04)}
+
+.section{padding:26px 0}
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:20px;
+  box-shadow:var(--shadow);
+  backdrop-filter: blur(6px);
+  margin-top:18px;
+}
+h2{
+  margin:0 0 12px 0;
+  font-size: clamp(20px, 2.4vw, 26px);
+  display:flex; align-items:center; gap:10px;
+}
+h2::after{
+  content:"";
+  flex:1;
+  height:2px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+  border-radius:2px;
+  opacity:.5;
+}
+
+.grid.two{display:grid;grid-template-columns:1fr;gap:18px}
+@media(min-width:900px){.grid.two{grid-template-columns:1fr 1fr}}
+@media (max-width: 599px) {
+  .grid.two-columns {
+    grid-template-columns: 1fr !important; /* single column on mobile */
+    gap: 24px !important;
+  }
+  .packing-list-title {
+    font-size: 1rem !important;
+    margin-bottom: 12px !important;
+  }
+  .packing-item {
+    flex-wrap: wrap;
+    gap: 6px !important;
+    font-size: 0.9rem !important;
+  }
+  .packing-item .name {
+    flex-basis: 100%;
+  }
+  .packing-item .qty-btn,
+  .packing-item input[type="number"] {
+    min-width: 64px;
+  }
+  .packing-item span.badge {
+    font-size: 0.75rem;
+  }
+}
+
+figure{margin:0}
+figure img{
+  width:100%;
+  border:1px solid var(--border);
+  border-radius:14px;
+  display:block;
+  box-shadow:var(--shadow);
+}
+figcaption{font-size:.95rem;color:var(--muted);margin-top:8px}
+
+ol,ul{padding-left:18px}
+.small{font-size:.9rem;color:var(--muted)}
+
+.btn{
+  border:1px solid var(--border); background:transparent; color:var(--text);
+  padding:8px 12px; border-radius:10px; cursor:pointer;
+}
+.btn:hover{background:rgba(255,255,255,.06)}
+.btn-primary{background:var(--accent); color:#0a1220; border-color:var(--accent)}
+.btn-primary:hover{filter:brightness(1.05)}
+.btn-ghost{background:transparent}
+
+.packing-actions{display:flex;gap:10px;flex-wrap:wrap;margin:8px 0 12px}
+.packing-actions input{
+  background:rgba(255,255,255,.06);
+  border:1px solid var(--border);
+  color:var(--text);
+  padding:8px 10px; border-radius:10px;
+}
+.grid.two-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.packing-list-title{
+  font-weight: bold;
+  margin-bottom: 6px;
+  font-size: 1.12rem;
+  color:var(--muted);
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.packing-sublist {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.packing-item{
+  display:flex;align-items:center;gap:12px;
+  border:1px solid var(--border);border-radius:12px;
+  padding:12px;background:rgba(255,255,255,.04);
+}
+
+.packing-item input[type="checkbox"] {
+  transition: box-shadow 0.15s, transform 0.15s;
+  /* keep existing width/height/accent-color declarations */
+}
+
+.packing-item input[type="checkbox"]:hover,
+.packing-item input[type="checkbox"]:focus-visible {
+  box-shadow: 0 0 0 3px var(--accent), 0 0 8px 0 var(--accent-2);
+  transform: scale(1.13);
+  outline: none !important;
+  cursor: pointer;
+}
+
+.packing-item input[type="checkbox"]{width:18px;height:18px;accent-color:var(--accent)}
+.packing-item input[type="number"]{
+  width:80px;background:rgba(255,255,255,.06);
+  border:1px solid var(--border); color:var(--text);
+  border-radius:8px; padding:6px 8px;
+}
+
+.packing-item.packed .name {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+.packing-item.packed input[type="checkbox"] {
+  accent-color: var(--accent-2);
+}
+
+.grid.two-columns {
+  position: relative;
+}
+.grid.two-columns::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: linear-gradient(
+    180deg,
+    var(--accent) 0%,
+    var(--accent-2) 50%,
+    transparent 90%
+  );
+  opacity: 0.22;
+  border-radius: 1px;
+  transform: translateX(-1px);
+  pointer-events: none;
+  transition: background 0.3s;
+}
+@media (max-width: 899px) {
+  .grid.two-columns::before {
+    display: none;
+  }
+}
+
+
+.qty-btn{
+  border:1px solid var(--border); background:rgba(255,255,255,.05);
+  color:var(--text); border-radius:8px; width:32px; height:32px;
+  display:inline-flex; align-items:center; justify-content:center; cursor:pointer;
+}
+.qty-btn:hover{background:rgba(255,255,255,.1)}
+
+.badge{
+  display:inline-block;padding:4px 10px;border-radius:999px;
+  background:rgba(142,240,212,.15);color:var(--accent-2);
+  font-size:.8rem;margin-left:6px;border:1px solid rgba(142,240,212,.35)
+}
+
+.progress{
+  margin-top:8px; background:rgba(255,255,255,.06);
+  border:1px solid var(--border); border-radius:999px; height:12px; overflow:hidden;
+}
+.progress > div{
+  height:100%; width:0%;
+  background:linear-gradient(90deg, var(--accent), var(--accent-2));
+  transition:width .25s ease;
+}
+
+footer{border-top:1px solid var(--border);margin-top:40px}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="container">
+    <h1>IBC 2025 Team Hub</h1>
+    <div class="lang-switch">
+      <span>Language:</span>
+      <button data-l="en" class="active">English</button>
+      <button data-l="ko">한국어</button>
+    </div>
+    <p data-lang="en">All-in-one page for directions, maps, hidden gems, badge info, and team logistics.</p>
+    <p data-lang="ko">길찾기, 지도, 로컬 추천, 배지 정보, 팀 운영을 한 곳에서.</p>
+    <nav>
+      <a href="#directions" data-lang="en">Directions</a>
+      <a href="#directions" data-lang="ko">경로 안내</a>
+      <a href="#maps" data-lang="en">Maps</a>
+      <a href="#maps" data-lang="ko">지도</a>
+      <a href="#packing" data-lang="en">Packing List</a>
+      <a href="#packing" data-lang="ko">준비물 체크리스트</a>
+      <a href="#badge" data-lang="en">Badge & Transport</a>
+      <a href="#badge" data-lang="ko">배지 & 교통</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container section">
+
+<section id="directions" class="card">
+  <h2 data-lang="en">Step-by-Step Route to IBC 2025 (Hall 10)</h2>
+  <h2 data-lang="ko">IBC 2025 (홀 10)까지 경로</h2>
+  <p data-lang="en"><strong>From:</strong> IntercityHotel Amsterdam Schiphol Airport · <strong>To:</strong> RAI Amsterdam – Hall 10</p>
+  <p data-lang="ko"><strong>출발:</strong> IntercityHotel Amsterdam Schiphol Airport · <strong>도착:</strong> RAI Amsterdam – Hall 10</p>
+  <ol data-lang="en">
+    <li>Walk 5 minutes (300 m) to <strong>Hoofddorp Station</strong></li>
+    <li>Take <strong>NS Sprinter</strong> to <strong>Amsterdam RAI</strong> (direct, ~17 min, EUR 4–8)</li>
+    <li>Walk 3 minutes (300 m) to <strong>Hall 10</strong></li>
+  </ol>
+  <ol data-lang="ko">
+    <li><strong>Hoofddorp 역</strong>까지 도보 5분 (300m)</li>
+    <li><strong>NS Sprinter</strong> 탑승 → <strong>Amsterdam RAI</strong> (직행, 약 17분, EUR 4–8)</li>
+    <li><strong>Hall 10</strong>까지 도보 3분 (300m)</li>
+  </ol>
+  <p data-lang="en"><strong>Total Time:</strong> ~25 minutes · <strong>Total Walking:</strong> ~600 m</p>
+  <p data-lang="ko"><strong>총 소요:</strong> 약 25분 · <strong>총 도보:</strong> 약 600m</p>
+  <div class="grid two">
+    <figure>
+      <img src="map_hotel_to_rai.png.png" alt="Hotel to RAI route map">
+      <figcaption data-lang="en">Hotel → RAI (Hall 10) route</figcaption>
+      <figcaption data-lang="ko">호텔 → RAI (Hall 10) 경로</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="maps" class="card">
+  <h2 data-lang="en">Maps</h2>
+  <h2 data-lang="ko">지도</h2>
+  <div class="grid two">
+    <figure>
+      <img src="map_attractions.png.png" alt="Local attractions map">
+      <figcaption data-lang="en">Local Attractions (11)</figcaption>
+      <figcaption data-lang="ko">로컬 명소 (11)</figcaption>
+    </figure>
+    <figure>
+      <img src="map_route_food.png.png" alt="Food + route map">
+      <figcaption data-lang="en">Local Food (10) + Hotel→RAI Route</figcaption>
+      <figcaption data-lang="ko">로컬 맛집 (10) + 호텔→RAI 경로</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="packing" class="card">
+  <h2 data-lang="en">Interactive Packing List</h2>
+  <h2 data-lang="ko">인터랙티브 준비물 체크리스트</h2>
+  <form id="packing-add" class="packing-actions">
+    <input id="add-en" placeholder="Add item (English)" />
+    <input id="add-ko" placeholder="항목 추가 (한국어)" />
+    <input id="add-qty" type="number" min="1" value="1" />
+    <button type="submit" class="btn btn-primary" data-lang="en">Add</button>
+    <button type="submit" class="btn btn-primary" data-lang="ko">추가</button>
+    <button type="button" class="btn js-export" data-lang="en">Export JSON</button>
+    <button type="button" class="btn js-export" data-lang="ko">내보내기(JSON)</button>
+    <button type="button" class="btn js-reset" data-lang="en">Reset</button>
+    <button type="button" class="btn js-reset" data-lang="ko">초기화</button>
+  </form>
+  <div id="packing-progress" class="small" data-lang="en">0 of 0 packed</div>
+  <div id="packing-progress" class="small" data-lang="ko">0 / 0 완료</div>
+  <div class="progress"><div id="packing-progress-bar"></div></div>
+  
+  <!-- Modified: Two columns for Unpacked and Packed -->
+  <div class="grid two-columns" id="packing-columns">
+    <div>
+      <div class="packing-list-title" data-lang="en">Unpacked</div>
+      <div class="packing-list-title" data-lang="ko">미완료 항목</div>
+      <div id="packing-list-unpacked" class="packing-sublist"></div>
+    </div>
+    <div>
+      <div class="packing-list-title" data-lang="en">Packed</div>
+      <div class="packing-list-title" data-lang="ko">완료</div>
+      <div id="packing-list-packed" class="packing-sublist"></div>
+    </div>
+  </div>
+  <p class="small" data-lang="en">Tip: Your progress saves automatically in this browser (localStorage).</p>
+  <p class="small" data-lang="ko">팁: 진행상황은 이 브라우저에 자동 저장됩니다 (localStorage).</p>
+</section>
+
+<section id="badge" class="card">
+  <h2 data-lang="en">IBC Badge & Transport Info</h2>
+  <h2 data-lang="ko">IBC 배지 & 교통 정보</h2>
+  <ul data-lang="en">
+    <li>✅ Free <strong>GVB</strong> trams, buses, metros (Sept 12–15) with badge</li>
+    <li>❌ <strong>NS train</strong> Hoofddorp → RAI not included — buy ticket separately</li>
+  </ul>
+  <ul data-lang="ko">
+    <li>✅ 배지 소지 시 <strong>GVB</strong> 트램/버스/메트로 무료 (9/12–15)</li>
+    <li>❌ <strong>NS 기차</strong> Hoofddorp → RAI 미포함 — 별도 구매 필요</li>
+  </ul>
+</section>
+</main>
+
+<footer class="container small">
+  <p>© 2025 Team IBC. Internal use only.</p>
+</footer>
+
+<script>
+(function(){
+  const KEY_LANG='ibc_lang';
+  const KEY_PACK='ibc_pack_v1';
+  const $ = (s,root=document)=>root.querySelector(s);
+  const $$ = (s,root=document)=>Array.from(root.querySelectorAll(s));
+
+  function setLang(lang){
+    localStorage.setItem(KEY_LANG, lang);
+    $$('[data-lang]:not(.lang-switch *)').forEach(el=>{
+      el.style.display = (el.getAttribute('data-lang')===lang) ? '' : 'none';
+    });
+    $$('.lang-switch button').forEach(b=>b.classList.toggle('active', b.dataset.l===lang));
+  }
+
+  document.addEventListener('DOMContentLoaded', ()=>{
+    const savedLang = localStorage.getItem(KEY_LANG) || 'en';
+    $$('.lang-switch button').forEach(b=>{
+      b.addEventListener('click', ()=> setLang(b.dataset.l));
+    });
+    setLang(savedLang);
+    initPacking();
+  });
+
+  const DEFAULT_ITEMS = [
+    {name_en:'PC', name_ko:'PC', qty:1},
+    {name_en:'NBOT', name_ko:'NBOT', qty:1},
+    {name_en:'VBOT', name_ko:'VBOT', qty:1},
+    {name_en:'NDOR', name_ko:'NDOR', qty:2},
+    {name_en:'DCORE', name_ko:'DCORE', qty:2},
+    {name_en:'Table covers', name_ko:'테이블 커버', qty:2},
+    {name_en:'DMX lighting', name_ko:'DMX 조명', qty:1},
+    {name_en:'Monitor screens ~17"', name_ko:'모니터(약 17인치)', qty:2},
+    {name_en:'ON AIR sign', name_ko:'On Air 사인', qty:1},
+    {name_en:'Big camera tripods', name_ko:'대형 카메라 삼각대', qty:2},
+    {name_en:'NoT', name_ko:'NoT', qty:2},
+    {name_en:'Cameras (XF605, Sony A7)', name_ko:'카메라 (XF605, Sony A7)', qty:2},
+    {name_en:'Power strips (long)', name_ko:'멀티탭(긴거)', qty:3},
+    {name_en:'Duck model', name_ko:'오리 모형', qty:1},
+    {name_en:'Netgear hub', name_ko:'Netgear 허브', qty:1},
+    {name_en:'Nqid', name_ko:'Nqid', qty:1},
+    {name_en:'Wooden stands/blocks', name_ko:'나무 받침대들', qty:1}
+  ];
+
+  function loadPack(){
+    try { return JSON.parse(localStorage.getItem(KEY_PACK)) || DEFAULT_ITEMS; }
+    catch(e){ return DEFAULT_ITEMS; }
+  }
+  function savePack(items){
+    localStorage.setItem(KEY_PACK, JSON.stringify(items));
+  }
+
+  function updateProgress(items){
+    const total = items.length || 0;
+    const done = items.filter(it=>it.done).length;
+    const pct = total ? Math.round(done/total*100) : 0;
+    const labels = $$('#packing-progress');
+    labels.forEach(lab=>{
+      if(lab.getAttribute('data-lang')==='en'){
+        lab.textContent = `${done} of ${total} packed (${pct}%)`;
+      }else{
+        lab.textContent = `${done} / ${total} 완료 (${pct}%)`;
+      }
+    });
+    const bar = $('#packing-progress-bar');
+    if(bar) bar.style.width = pct + '%';
+  }
+
+  function initPacking(){
+    const unpacked = $('#packing-list-unpacked');
+    const packed = $('#packing-list-packed');
+    if(!unpacked || !packed) return;
+    let items = loadPack();
+    render();
+
+    function render(){
+      unpacked.innerHTML='';
+      packed.innerHTML='';
+      items.forEach((it, idx)=>{
+        const row = document.createElement('div');
+        row.className='packing-item' + (it.done ? ' packed' : '');
+        if(!it.done){
+          // Unpacked list
+          row.innerHTML = `
+            <input type="checkbox" data-idx="${idx}" class="chk">
+            <button class="qty-btn dec" data-idx="${idx}" aria-label="decrease">–</button>
+            <input type="number" min="0" value="${it.qty||0}" data-idx="${idx}" class="qty">
+            <button class="qty-btn inc" data-idx="${idx}" aria-label="increase">+</button>
+            <span class="name">
+              <span data-lang="en">${it.name_en}</span>
+              <span data-lang="ko">${it.name_ko}</span>
+            </span>
+            <span class="badge">${it.note||''}</span>
+            <span style="margin-left:auto;display:flex;gap:6px">
+              <button class="qty-btn del" data-idx="${idx}" aria-label="delete">✕</button>
+            </span>
+          `;
+          unpacked.appendChild(row);
+        } else {
+          // Packed list (checked, disabled, crossed off)
+          row.innerHTML = `
+            <input type="checkbox" data-idx="${idx}" class="chk" checked>
+            <span class="name">
+              <span data-lang="en">${it.name_en}</span>
+              <span data-lang="ko">${it.name_ko}</span>
+            </span>
+            <span style="margin-left:10px; color:var(--muted); font-size:.95em;">×${it.qty||0}</span>
+            <span class="badge">${it.note||''}</span>
+          `;
+          // Disable the checkbox for visual difference (but allow click to uncheck)
+          row.querySelector('input[type="checkbox"]').disabled = false;
+          packed.appendChild(row);
+        }
+      });
+      const lang = localStorage.getItem(KEY_LANG) || 'en';
+      $$('[data-lang]:not(.lang-switch *)').forEach(el=>{
+        el.style.display = (el.getAttribute('data-lang')===lang) ? '' : 'none';
+      });
+      updateProgress(items);
+      // listeners:
+      // Unpacked:
+      unpacked.querySelectorAll('input.chk').forEach(box=>{
+        box.addEventListener('change',e=>{
+          const idx = +e.target.dataset.idx;
+          items[idx].done = e.target.checked;
+          savePack(items);
+          render();
+        });
+      });
+      // Packed:
+      packed.querySelectorAll('input.chk').forEach(box=>{
+        box.addEventListener('change',e=>{
+          // Uncheck: move to left
+          const idx = +e.target.dataset.idx;
+          items[idx].done = e.target.checked;
+          savePack(items);
+          render();
+        });
+      });
+      // Quantity and del:
+      unpacked.addEventListener('change', onChange);
+      unpacked.addEventListener('click', onClick);
+    }
+
+    function onChange(e){
+      const idx = +e.target.dataset.idx;
+      if(e.target.classList.contains('qty')){
+        items[idx].qty = +e.target.value;
+        savePack(items);
+        render();
+      }
+    }
+    function onClick(e){
+      const idx = +e.target.dataset.idx;
+      if(e.target.classList.contains('inc')){
+        items[idx].qty = (items[idx].qty||0)+1;
+        savePack(items);
+        render();
+      } else if(e.target.classList.contains('dec')){
+        items[idx].qty = Math.max(0,(items[idx].qty||0)-1);
+        savePack(items);
+        render();
+      } else if(e.target.classList.contains('del')){
+        items.splice(idx,1);
+        savePack(items);
+        render();
+      }
+    }
+
+    const form = document.getElementById('packing-add');
+    if(form){
+      form.addEventListener('submit', (e)=>{
+        e.preventDefault();
+        const nameEn = document.getElementById('add-en').value.trim();
+        const nameKo = document.getElementById('add-ko').value.trim();
+        const qty = +(document.getElementById('add-qty').value || 1);
+        if(!nameEn && !nameKo) return;
+        items.push({name_en:nameEn||nameKo, name_ko:nameKo||nameEn, qty:qty, done:false});
+        savePack(items);
+        document.getElementById('add-en').value='';
+        document.getElementById('add-ko').value='';
+        document.getElementById('add-qty').value='1';
+        render();
+      });
+    }
+
+    $$('.js-export').forEach(btn=>btn.addEventListener('click', ()=>{
+      const blob = new Blob([JSON.stringify(items, null, 2)], {type:'application/json'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = 'packing_list.json';
+      document.body.appendChild(a); a.click(); a.remove();
+      URL.revokeObjectURL(url);
+    }));
+    $$('.js-reset').forEach(btn=>btn.addEventListener('click', ()=>{
+      if(confirm('Reset packing list to defaults? / 기본 목록으로 초기화할까요?')){
+        items = JSON.parse(JSON.stringify(DEFAULT_ITEMS));
+        savePack(items);
+        render();
+      }
+    }));
+  }
+})();
+</script>
+</body>
+</html>
