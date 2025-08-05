@@ -1,297 +1,411 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>IBC 2025 Team Hub | Maps · Directions · Checklists</title>
 <style>
-:root{
-  --bg: #0b1220;
-  --bg-soft: #121a2a;
-  --card: rgba(255,255,255,0.06);
-  --border: rgba(255,255,255,0.12);
-  --text: #e6e8ee;
-  --muted: #b7bfd1;
-  --accent: #6ea8fe;
-  --accent-2: #8ef0d4;
-  --danger: #ff6b6b;
-  --shadow: 0 10px 30px rgba(0,0,0,.35);
-}
-
-*{box-sizing:border-box}
-html,body{height:100%}
-body{
-  margin:0;
-  background: radial-gradient(1200px 600px at 10% -10%, rgba(110,168,254,.18), transparent 50%),
-              radial-gradient(900px 500px at 110% 10%, rgba(142,240,212,.15), transparent 40%),
-              var(--bg);
-  color:var(--text);
-  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, Noto Sans, "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", sans-serif;
-  line-height:1.6;
-}
-
-.container{max-width:1100px;margin:0 auto;padding:24px}
-.hero{
-  position:relative;
-  padding:48px 24px 32px;
-  background:
-    radial-gradient(800px 300px at 20% 0%, rgba(110,168,254,.25), transparent 60%),
-    linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02)),
-    var(--bg-soft);
-  border-bottom:1px solid var(--border);
-  box-shadow:var(--shadow);
-}
-.hero h1{
-  margin:0 0 6px 0;
-  font-size: clamp(28px, 4vw, 42px);
-  letter-spacing:.2px;
-}
-.hero p{margin:8px 0 16px;color:var(--muted)}
-
-.lang-switch{display:flex;gap:10px;align-items:center;margin:8px 0 14px}
-.lang-switch button{
-  border:1px solid var(--border);
-  background:transparent;
-  color:var(--text);
-  padding:8px 12px;border-radius:10px;
-  cursor:pointer;font-weight:600;
-  backdrop-filter: blur(6px);
-}
-.lang-switch button.active{background:var(--accent);border-color:var(--accent);color:#0a1220}
-
-nav{display:flex;gap:14px;flex-wrap:wrap}
-nav a{
-  color:var(--text);
-  text-decoration:none;
-  padding:8px 10px;
-  border-radius:8px;
-  border:1px solid transparent;
-}
-nav a:hover{border-color:var(--border);background:rgba(255,255,255,.04)}
-
-.section{padding:26px 0}
-.card{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:16px;
-  padding:20px;
-  box-shadow:var(--shadow);
-  backdrop-filter: blur(6px);
-  margin-top:18px;
-}
-h2{
-  margin:0 0 12px 0;
-  font-size: clamp(20px, 2.4vw, 26px);
-  display:flex; align-items:center; gap:10px;
-}
-h2::after{
-  content:"";
-  flex:1;
-  height:2px;
-  background: linear-gradient(90deg, var(--accent), transparent);
-  border-radius:2px;
-  opacity:.5;
-}
-
-.grid.two{display:grid;grid-template-columns:1fr;gap:18px}
-@media(min-width:900px){.grid.two{grid-template-columns:1fr 1fr}}
-@media (max-width: 599px) {
+  :root{
+    --bg: #0b1220;
+    --bg-soft: #121a2a;
+    --card: rgba(255,255,255,0.06);
+    --border: rgba(255,255,255,0.12);
+    --text: #e6e8ee;
+    --muted: #b7bfd1;
+    --accent: #6ea8fe;
+    --accent-2: #8ef0d4;
+    --danger: #ff6b6b;
+    --shadow: 0 10px 30px rgba(0,0,0,.35);
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0;
+    background: radial-gradient(1200px 600px at 10% -10%, rgba(110,168,254,.18), transparent 50%),
+                radial-gradient(900px 500px at 110% 10%, rgba(142,240,212,.15), transparent 40%),
+                var(--bg);
+    color:var(--text);
+    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, Noto Sans, "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", sans-serif;
+    line-height:1.6;
+  }
+  .container{max-width:1100px;margin:0 auto;padding:24px}
+  .hero{
+    position:relative;
+    padding:48px 24px 32px;
+    background:
+      radial-gradient(800px 300px at 20% 0%, rgba(110,168,254,.25), transparent 60%),
+      linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02)),
+      var(--bg-soft);
+    border-bottom:1px solid var(--border);
+    box-shadow:var(--shadow);
+  }
+  .hero h1{
+    margin:0 0 6px 0;
+    font-size: clamp(28px, 4vw, 42px);
+    letter-spacing:.2px;
+  }
+  .hero p{margin:8px 0 16px;color:var(--muted)}
+  .lang-switch{display:flex;gap:10px;align-items:center;margin:8px 0 14px}
+  .lang-switch button{
+    border:1px solid var(--border);
+    background:transparent;
+    color:var(--text);
+    padding:8px 12px;border-radius:10px;
+    cursor:pointer;font-weight:600;
+    backdrop-filter: blur(6px);
+  }
+  .lang-switch button.active{background:var(--accent);border-color:var(--accent);color:#0a1220}
+  nav{display:flex;gap:14px;flex-wrap:wrap}
+  nav a{
+    color:var(--text);
+    text-decoration:none;
+    padding:8px 10px;
+    border-radius:8px;
+    border:1px solid transparent;
+  }
+  nav a:hover{border-color:var(--border);background:rgba(255,255,255,.04)}
+  .section{padding:26px 0}
+  .card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:16px;
+    padding:20px;
+    box-shadow:var(--shadow);
+    backdrop-filter: blur(6px);
+    margin-top:18px;
+  }
+  h2{
+    margin:0 0 12px 0;
+    font-size: clamp(20px, 2.4vw, 26px);
+    display:flex; align-items:center; gap:10px;
+  }
+  h2::after{
+    content:"";
+    flex:1;
+    height:2px;
+    background: linear-gradient(90deg, var(--accent), transparent);
+    border-radius:2px;
+    opacity:.5;
+  }
+  .grid.two{display:grid;grid-template-columns:1fr;gap:18px}
+  @media(min-width:900px){.grid.two{grid-template-columns:1fr 1fr}}
+  figure{margin:0}
+  figure img{
+    width:100%;
+    border:1px solid var(--border);
+    border-radius:14px;
+    display:block;
+    box-shadow:var(--shadow);
+  }
+  figcaption{font-size:.95rem;color:var(--muted);margin-top:8px}
+  ol,ul{padding-left:18px}
+  .small{font-size:.9rem;color:var(--muted)}
+  .btn{
+    border:1px solid var(--border); background:transparent; color:var(--text);
+    padding:8px 12px; border-radius:10px; cursor:pointer;
+  }
+  .btn:hover{background:rgba(255,255,255,.06)}
+  .btn-primary{background:var(--accent); color:#0a1220; border-color:var(--accent)}
+  .btn-primary:hover{filter:brightness(1.05)}
+  .btn-ghost{background:transparent}
+  .packing-actions{display:flex;gap:10px;flex-wrap:wrap;margin:8px 0 12px}
+  .packing-actions input{
+    background:rgba(255,255,255,.06);
+    border:1px solid var(--border);
+    color:var(--text);
+    padding:8px 10px; border-radius:10px;
+  }
   .grid.two-columns {
-    grid-template-columns: 1fr !important; /* single column on mobile */
-    gap: 24px !important;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    position: relative;
   }
-  .packing-list-title {
-    font-size: 1rem !important;
-    margin-bottom: 12px !important;
-  }
-  .packing-item {
-    flex-wrap: wrap;
-    gap: 6px !important;
-    font-size: 0.9rem !important;
-  }
-  .packing-item .name {
-    flex-basis: 100%;
-  }
-  .packing-item .qty-btn,
-  .packing-item input[type="number"] {
-    min-width: 64px;
-  }
-  .packing-item span.badge {
-    font-size: 0.75rem;
-  }
-}
-
-figure{margin:0}
-figure img{
-  width:100%;
-  border:1px solid var(--border);
-  border-radius:14px;
-  display:block;
-  box-shadow:var(--shadow);
-}
-figcaption{font-size:.95rem;color:var(--muted);margin-top:8px}
-
-ol,ul{padding-left:18px}
-.small{font-size:.9rem;color:var(--muted)}
-
-.btn{
-  border:1px solid var(--border); background:transparent; color:var(--text);
-  padding:8px 12px; border-radius:10px; cursor:pointer;
-}
-.btn:hover{background:rgba(255,255,255,.06)}
-.btn-primary{background:var(--accent); color:#0a1220; border-color:var(--accent)}
-.btn-primary:hover{filter:brightness(1.05)}
-.btn-ghost{background:transparent}
-
-.packing-actions{display:flex;gap:10px;flex-wrap:wrap;margin:8px 0 12px}
-.packing-actions input{
-  background:rgba(255,255,255,.06);
-  border:1px solid var(--border);
-  color:var(--text);
-  padding:8px 10px; border-radius:10px;
-}
-.grid.two-columns {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
-}
-
-.packing-list-title{
-  font-weight: bold;
-  margin-bottom: 6px;
-  font-size: 1.12rem;
-  color:var(--muted);
-  display: flex;
-  gap: 8px;
-  align-items: center;
-}
-
-.packing-sublist {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.packing-item{
-  display:flex;align-items:center;gap:12px;
-  border:1px solid var(--border);border-radius:12px;
-  padding:12px;background:rgba(255,255,255,.04);
-}
-
-.packing-item input[type="checkbox"] {
-  transition: box-shadow 0.15s, transform 0.15s;
-  /* keep existing width/height/accent-color declarations */
-}
-
-.packing-item input[type="checkbox"]:hover,
-.packing-item input[type="checkbox"]:focus-visible {
-  box-shadow: 0 0 0 3px var(--accent), 0 0 8px 0 var(--accent-2);
-  transform: scale(1.13);
-  outline: none !important;
-  cursor: pointer;
-}
-
-.packing-item input[type="checkbox"]{width:18px;height:18px;accent-color:var(--accent)}
-.packing-item input[type="number"]{
-  width:80px;background:rgba(255,255,255,.06);
-  border:1px solid var(--border); color:var(--text);
-  border-radius:8px; padding:6px 8px;
-}
-
-.packing-item.packed .name {
-  text-decoration: line-through;
-  opacity: 0.6;
-}
-.packing-item.packed input[type="checkbox"] {
-  accent-color: var(--accent-2);
-}
-
-.grid.two-columns {
-  position: relative;
-}
-.grid.two-columns::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  width: 2px;
-  background: linear-gradient(
-    180deg,
-    var(--accent) 0%,
-    var(--accent-2) 50%,
-    transparent 90%
-  );
-  opacity: 0.22;
-  border-radius: 1px;
-  transform: translateX(-1px);
-  pointer-events: none;
-  transition: background 0.3s;
-}
-@media (max-width: 899px) {
   .grid.two-columns::before {
-    display: none;
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    background: linear-gradient(
+      180deg,
+      var(--accent) 0%,
+      var(--accent-2) 50%,
+      transparent 90%
+    );
+    opacity: 0.22;
+    border-radius: 1px;
+    transform: translateX(-1px);
+    pointer-events: none;
+    transition: background 0.3s;
   }
+  #interactive-map, #attractions-map, #foods-map {
+    height: 400px;
+    border-radius: 12px;
+    margin-bottom: 24px;
+    box-shadow: var(--shadow);
+    width: 100%;
+  }
+  
+  .leaflet-container .marker-label {
+    background: #ffffff;
+    border: none;
+    color:#000000;
+    font-weight: 600;
+    font-size: 0.9rem;
+    pointer-events: none;
+    white-space: nowrap;
+    user-select: none;
+  }
+
+  /* React Food Info Cards Styles */
+  .food-info-grid {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 24px;
+  }
+  .food-info-column {
+    flex: 1;
+    min-width: 320px;
+    max-width: 440px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .food-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 14px;
+    padding: 14px 20px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+    color: var(--text);
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+  .food-card strong {
+    font-size: 1.1rem;
+    display: block;
+    margin-bottom: 6px;
+    color: var(--accent);
+  }
+  .food-info-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
+  }
+  .food-info-icon {
+    width: 18px;
+    height: 18px;
+    fill: var(--accent);
+    flex-shrink: 0;
+  }
+  @media (max-width: 899px) {
+    .grid.two-columns::before {
+      display: none;
+    }
+  }
+  .packing-list-title{
+    font-weight: bold;
+    margin-bottom: 6px;
+    font-size: 1.12rem;
+    color:var(--muted);
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+  .packing-sublist {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .packing-item{
+    display:flex;align-items:center;gap:12px;
+    border:1px solid var(--border);border-radius:12px;
+    padding:12px;background:rgba(255,255,255,.04);
+  }
+  .packing-item input[type="checkbox"]{width:18px;height:18px;accent-color:var(--accent)}
+  .packing-item input[type="checkbox"]:not(:disabled):hover {
+    box-shadow: 0 0 0 3px var(--accent), 0 0 8px 0 var(--accent-2);
+    transform: scale(1.13);
+    outline: none !important;
+    cursor: pointer;
+    background: var(--card);
+    transition: box-shadow 0.15s, transform 0.15s;
+  }
+  .packing-item input[type="checkbox"]:focus-visible {
+    box-shadow: 0 0 0 4px var(--accent-2);
+    transform: scale(1.13);
+    outline: none !important;
+  }
+  .packing-item input[type="number"]{
+    width:80px;background:rgba(255,255,255,.06);
+    border:1px solid var(--border); color:var(--text);
+    border-radius:8px; padding:6px 8px;
+  }
+  .packing-item.packed .name {
+    text-decoration: line-through;
+    opacity: 0.6;
+  }
+  .packing-item.packed input[type="checkbox"] {
+    accent-color: var(--accent-2);
+  }
+  .qty-btn{
+    border:1px solid var(--border); background:rgba(255,255,255,.05);
+    color:var(--text); border-radius:8px; width:32px; height:32px;
+    display:inline-flex; align-items:center; justify-content:center; cursor:pointer;
+  }
+  .qty-btn:hover{background:rgba(255,255,255,.1)}
+  .badge{
+    display:inline-block;padding:4px 10px;border-radius:999px;
+    background:rgba(142,240,212,.15);color:var(--accent-2);
+    font-size:.8rem;margin-left:6px;border:1px solid rgba(142,240,212,.35)
+  }
+  .progress{
+    margin-top:8px; background:rgba(255,255,255,.06);
+    border:1px solid var(--border); border-radius:999px; height:12px; overflow:hidden;
+  }
+  .progress > div{
+    height:100%; width:0%;
+    background:linear-gradient(90deg, var(--accent), var(--accent-2));
+    transition:width .25s ease;
+  }
+  @media (max-width: 599px) {
+    .grid.two-columns {
+      grid-template-columns: 1fr !important;
+      gap: 24px !important;
+    }
+    .packing-list-title {
+      font-size: 1rem !important;
+      margin-bottom: 12px !important;
+    }
+    .packing-item {
+      flex-wrap: wrap;
+      gap: 6px !important;
+      font-size: 0.9rem !important;
+    }
+    .packing-item .name {
+      flex-basis: 100%;
+    }
+    .packing-item .qty-btn,
+    .packing-item input[type="number"] {
+      min-width: 64px;
+    }
+    .packing-item span.badge {
+      font-size: 0.75rem;
+    }
+  }
+
+  #maps a{
+    text-decoration: none;
+    color:#DCDFE4;
+    font-weight: 600
+  }
+
+  #interactive-map, #attractions-map, #foods-map {
+    height: 400px;
+    border-radius: 12px;
+    margin-bottom: 24px;
+    box-shadow: var(--shadow);
+    width: 100%;
+  }
+  .leaflet-container .marker-label {
+    background: #ffffff;
+    border: none;
+    color:#000000;
+    font-weight: 600;
+    font-size: 0.9rem;
+    pointer-events: none;
+    white-space: nowrap;
+    user-select: none;
+  }
+  .food-info-grid {
+ display: flex;
+ gap: 32px;
+ flex-wrap: wrap;
+ justify-content: center;
+ margin-bottom: 24px;
+}
+.food-info-column {
+ flex: 1;
+ min-width: 320px;
+ max-width: 440px;
+ display: flex;
+ flex-direction: column;
+ gap: 18px;
+}
+.food-card {
+ background: rgba(255, 255, 255, 0.05);
+ border-radius: 14px;
+ padding: 14px 20px;
+ box-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+ color: var(--text);
+ font-size: 0.9rem;
+ line-height: 1.4;
+}
+.food-card strong {
+ font-size: 1.1rem;
+ display: block;
+ margin-bottom: 6px;
+ color: var(--accent);
+}
+.food-info-row {
+ display: flex;
+ align-items: center;
+ gap: 8px;
+ margin-bottom: 4px;
+}
+.food-info-icon {
+ width: 18px;
+ height: 18px;
+ fill: var(--accent);
+ flex-shrink: 0;
 }
 
 
-.qty-btn{
-  border:1px solid var(--border); background:rgba(255,255,255,.05);
-  color:var(--text); border-radius:8px; width:32px; height:32px;
-  display:inline-flex; align-items:center; justify-content:center; cursor:pointer;
-}
-.qty-btn:hover{background:rgba(255,255,255,.1)}
-
-.badge{
-  display:inline-block;padding:4px 10px;border-radius:999px;
-  background:rgba(142,240,212,.15);color:var(--accent-2);
-  font-size:.8rem;margin-left:6px;border:1px solid rgba(142,240,212,.35)
-}
-
-.progress{
-  margin-top:8px; background:rgba(255,255,255,.06);
-  border:1px solid var(--border); border-radius:999px; height:12px; overflow:hidden;
-}
-.progress > div{
-  height:100%; width:0%;
-  background:linear-gradient(90deg, var(--accent), var(--accent-2));
-  transition:width .25s ease;
-}
-
-footer{border-top:1px solid var(--border);margin-top:40px}
+  footer{border-top:1px solid var(--border);margin-top:40px}
 </style>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
 <body>
 <header class="hero">
-  <div class="container">
-    <h1>IBC 2025 Team Hub</h1>
-    <div class="lang-switch">
-      <span>Language:</span>
-      <button data-l="en" class="active">English</button>
-      <button data-l="ko">한국어</button>
-    </div>
-    <p data-lang="en">All-in-one page for directions, maps, hidden gems, badge info, and team logistics.</p>
-    <p data-lang="ko">길찾기, 지도, 로컬 추천, 배지 정보, 팀 운영을 한 곳에서.</p>
-    <nav>
-      <a href="#directions" data-lang="en">Directions</a>
-      <a href="#directions" data-lang="ko">경로 안내</a>
-      <a href="#maps" data-lang="en">Maps</a>
-      <a href="#maps" data-lang="ko">지도</a>
-      <a href="#packing" data-lang="en">Packing List</a>
-      <a href="#packing" data-lang="ko">준비물 체크리스트</a>
-      <a href="#badge" data-lang="en">Badge & Transport</a>
-      <a href="#badge" data-lang="ko">배지 & 교통</a>
-    </nav>
+<div class="container">
+  <h1>IBC 2025 Team Hub</h1>
+  <div class="lang-switch">
+    <span>Language:</span>
+    <button data-l="en" class="active">English</button>
+    <button data-l="ko">한국어</button>
   </div>
+  <p data-lang="en">
+    All-in-one page for directions, maps, hidden gems, badge info, and team logistics.
+  </p>
+  <p data-lang="ko">길찾기, 지도, 로컬 추천, 배지 정보, 팀 운영을 한 곳에서.</p>
+  <nav>
+    <a href="#directions" data-lang="en">Directions</a>
+    <a href="#directions" data-lang="ko">경로 안내</a>
+    <a href="#maps" data-lang="en">Maps</a>
+    <a href="#maps" data-lang="ko">지도</a>
+    <a href="#packing" data-lang="en">Packing List</a>
+    <a href="#packing" data-lang="ko">준비물 체크리스트</a>
+    <a href="#badge" data-lang="en">Badge & Transport</a>
+    <a href="#badge" data-lang="ko">배지 & 교통</a>
+  </nav>
+</div>
 </header>
 
 <main class="container section">
-
 <section id="directions" class="card">
   <h2 data-lang="en">Step-by-Step Route to IBC 2025 (Hall 10)</h2>
   <h2 data-lang="ko">IBC 2025 (홀 10)까지 경로</h2>
-  <p data-lang="en"><strong>From:</strong> IntercityHotel Amsterdam Schiphol Airport · <strong>To:</strong> RAI Amsterdam – Hall 10</p>
-  <p data-lang="ko"><strong>출발:</strong> IntercityHotel Amsterdam Schiphol Airport · <strong>도착:</strong> RAI Amsterdam – Hall 10</p>
+  <p data-lang="en">
+    <strong>From:</strong> IntercityHotel Amsterdam Schiphol Airport · <strong>To:</strong> RAI Amsterdam – Hall 10
+  </p>
+  <p data-lang="ko">
+    <strong>출발:</strong> IntercityHotel Amsterdam Schiphol Airport · <strong>도착:</strong> RAI Amsterdam – Hall 10
+  </p>
   <ol data-lang="en">
     <li>Walk 5 minutes (300 m) to <strong>Hoofddorp Station</strong></li>
     <li>Take <strong>NS Sprinter</strong> to <strong>Amsterdam RAI</strong> (direct, ~17 min, EUR 4–8)</li>
@@ -302,32 +416,24 @@ footer{border-top:1px solid var(--border);margin-top:40px}
     <li><strong>NS Sprinter</strong> 탑승 → <strong>Amsterdam RAI</strong> (직행, 약 17분, EUR 4–8)</li>
     <li><strong>Hall 10</strong>까지 도보 3분 (300m)</li>
   </ol>
-  <p data-lang="en"><strong>Total Time:</strong> ~25 minutes · <strong>Total Walking:</strong> ~600 m</p>
-  <p data-lang="ko"><strong>총 소요:</strong> 약 25분 · <strong>총 도보:</strong> 약 600m</p>
-  <div class="grid two">
-    <figure>
-      <img src="map_hotel_to_rai.png.png" alt="Hotel to RAI route map">
-      <figcaption data-lang="en">Hotel → RAI (Hall 10) route</figcaption>
-      <figcaption data-lang="ko">호텔 → RAI (Hall 10) 경로</figcaption>
-    </figure>
-  </div>
 </section>
 
 <section id="maps" class="card">
-  <h2 data-lang="en">Maps</h2>
-  <h2 data-lang="ko">지도</h2>
-  <div class="grid two">
-    <figure>
-      <img src="map_attractions.png.png" alt="Local attractions map">
-      <figcaption data-lang="en">Local Attractions (11)</figcaption>
-      <figcaption data-lang="ko">로컬 명소 (11)</figcaption>
-    </figure>
-    <figure>
-      <img src="map_route_food.png.png" alt="Food + route map">
-      <figcaption data-lang="en">Local Food (10) + Hotel→RAI Route</figcaption>
-      <figcaption data-lang="ko">로컬 맛집 (10) + 호텔→RAI 경로</figcaption>
-    </figure>
-  </div>
+  <a href="https://www.google.com/maps/dir/IntercityHotel+Amsterdam+Schiphol+Airport,+Spark+Ave+1,+2133+LC+Hoofddorp,+Netherlands/RAI%2FAmsterdam,+Europaplein,+Amsterdam,+Netherlands/@52.336371,4.7447001,12z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0x47c5e7ca5f0558af:0x6e3b305eed4f3367!2m2!1d4.6955542!2d52.2899677!1m5!1m1!1s0x47c60a1f63d57e25:0xa08f37a724d09338!2m2!1d4.8886156!2d52.3411906!3e3?entry=ttu&g_ep=EgoyMDI1MDczMC4wIKXMDSoASAFQAw%3D%3D"><h2 data-lang="en">Maps</h2>
+  <h2 data-lang="ko">지도</h2></a>
+
+  <div id="interactive-map"></div>
+
+  <a href="https://umap.openstreetmap.fr/en/map/local-attractions-amsterdam_1264049?scaleControl=false&miniMap=false&scrollWheelZoom=true&zoomControl=true&editMode=disabled&moreControl=true&searchControl=null&tilelayersControl=null&embedControl=null&datalayersControl=true&onLoadPanel=none&captionBar=false&captionMenus=true"><h3 data-lang="en">Local Attractions</h3>
+  <h3 data-lang="ko">로컬 명소</h3></a> 
+  <div id="attractions-map"></div>
+
+  <a href="https://umap.openstreetmap.fr/en/map/local-food-places_1264067?scaleControl=false&miniMap=false&scrollWheelZoom=false&zoomControl=true&editMode=disabled&moreControl=true&searchControl=null&tilelayersControl=null&embedControl=null&datalayersControl=true&onLoadPanel=none&captionBar=false&captionMenus=true"><h3 data-lang="en">Local Food Spots</h3>
+  <h3 data-lang="ko">로컬 맛집</h3></a>
+
+<div id="foods-map"></div>
+<div id="food-info-root"></div> <!-- React will render here -->
+
 </section>
 
 <section id="packing" class="card">
@@ -346,9 +452,9 @@ footer{border-top:1px solid var(--border);margin-top:40px}
   </form>
   <div id="packing-progress" class="small" data-lang="en">0 of 0 packed</div>
   <div id="packing-progress" class="small" data-lang="ko">0 / 0 완료</div>
-  <div class="progress"><div id="packing-progress-bar"></div></div>
-  
-  <!-- Modified: Two columns for Unpacked and Packed -->
+  <div class="progress">
+    <div id="packing-progress-bar"></div>
+  </div>
   <div class="grid two-columns" id="packing-columns">
     <div>
       <div class="packing-list-title" data-lang="en">Unpacked</div>
@@ -361,7 +467,9 @@ footer{border-top:1px solid var(--border);margin-top:40px}
       <div id="packing-list-packed" class="packing-sublist"></div>
     </div>
   </div>
-  <p class="small" data-lang="en">Tip: Your progress saves automatically in this browser (localStorage).</p>
+  <p class="small" data-lang="en">
+    Tip: Your progress saves automatically in this browser (localStorage).
+  </p>
   <p class="small" data-lang="ko">팁: 진행상황은 이 브라우저에 자동 저장됩니다 (localStorage).</p>
 </section>
 
@@ -383,209 +491,386 @@ footer{border-top:1px solid var(--border);margin-top:40px}
   <p>© 2025 Team IBC. Internal use only.</p>
 </footer>
 
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
-(function(){
-  const KEY_LANG='ibc_lang';
-  const KEY_PACK='ibc_pack_v1';
-  const $ = (s,root=document)=>root.querySelector(s);
-  const $$ = (s,root=document)=>Array.from(root.querySelectorAll(s));
+  (function() {
+    const KEY_LANG = "ibc_lang";
+    const $ = (s, root=document) => root.querySelector(s);
+    const $$ = (s, root=document) => Array.from(root.querySelectorAll(s));
+    const lang = localStorage.getItem(KEY_LANG) || "en";
 
-  function setLang(lang){
-    localStorage.setItem(KEY_LANG, lang);
-    $$('[data-lang]:not(.lang-switch *)').forEach(el=>{
-      el.style.display = (el.getAttribute('data-lang')===lang) ? '' : 'none';
-    });
-    $$('.lang-switch button').forEach(b=>b.classList.toggle('active', b.dataset.l===lang));
-  }
+    function setLang(lng) {
+      localStorage.setItem(KEY_LANG, lng);
+      $$("[data-lang]:not(.lang-switch *)").forEach(el => {
+        el.style.display = el.getAttribute("data-lang") === lng ? "" : "none";
+      });
+      $$("button[data-l]").forEach(b => {
+        b.classList.toggle("active", b.dataset.l === lng);
+      });
+    }
 
-  document.addEventListener('DOMContentLoaded', ()=>{
-    const savedLang = localStorage.getItem(KEY_LANG) || 'en';
-    $$('.lang-switch button').forEach(b=>{
-      b.addEventListener('click', ()=> setLang(b.dataset.l));
-    });
-    setLang(savedLang);
-    initPacking();
-  });
+    // Packing list related code
+    const DEFAULT_ITEMS = [
+      {name_en:"PC",name_ko:"PC",qty:1},
+      {name_en:"NBOT",name_ko:"NBOT",qty:1},
+      {name_en:"VBOT",name_ko:"VBOT",qty:1},
+      {name_en:"NDOR",name_ko:"NDOR",qty:2},
+      {name_en:"DCORE",name_ko:"DCORE",qty:2},
+      {name_en:"Table covers",name_ko:"테이블 커버",qty:2},
+      {name_en:"DMX lighting",name_ko:"DMX 조명",qty:1},
+      {name_en:"Monitor screens ~17\"",name_ko:"모니터(약 17인치)",qty:2},
+      {name_en:"ON AIR sign",name_ko:"On Air 사인",qty:1},
+      {name_en:"Big camera tripods",name_ko:"대형 카메라 삼각대",qty:2},
+      {name_en:"NoT",name_ko:"NoT",qty:2},
+      {name_en:"Cameras (XF605, Sony A7)",name_ko:"카메라 (XF605, Sony A7)",qty:2},
+      {name_en:"Power strips (long)",name_ko:"멀티탭(긴거)",qty:3},
+      {name_en:"Duck model",name_ko:"오리 모형",qty:1},
+      {name_en:"Netgear hub",name_ko:"Netgear 허브",qty:1},
+      {name_en:"Nqid",name_ko:"Nqid",qty:1},
+      {name_en:"Wooden stands/blocks",name_ko:"나무 받침대들",qty:1},
+    ];
+    const KEY_PACK = "ibc_pack_v1";
+    let items;
 
-  const DEFAULT_ITEMS = [
-    {name_en:'PC', name_ko:'PC', qty:1},
-    {name_en:'NBOT', name_ko:'NBOT', qty:1},
-    {name_en:'VBOT', name_ko:'VBOT', qty:1},
-    {name_en:'NDOR', name_ko:'NDOR', qty:2},
-    {name_en:'DCORE', name_ko:'DCORE', qty:2},
-    {name_en:'Table covers', name_ko:'테이블 커버', qty:2},
-    {name_en:'DMX lighting', name_ko:'DMX 조명', qty:1},
-    {name_en:'Monitor screens ~17"', name_ko:'모니터(약 17인치)', qty:2},
-    {name_en:'ON AIR sign', name_ko:'On Air 사인', qty:1},
-    {name_en:'Big camera tripods', name_ko:'대형 카메라 삼각대', qty:2},
-    {name_en:'NoT', name_ko:'NoT', qty:2},
-    {name_en:'Cameras (XF605, Sony A7)', name_ko:'카메라 (XF605, Sony A7)', qty:2},
-    {name_en:'Power strips (long)', name_ko:'멀티탭(긴거)', qty:3},
-    {name_en:'Duck model', name_ko:'오리 모형', qty:1},
-    {name_en:'Netgear hub', name_ko:'Netgear 허브', qty:1},
-    {name_en:'Nqid', name_ko:'Nqid', qty:1},
-    {name_en:'Wooden stands/blocks', name_ko:'나무 받침대들', qty:1}
-  ];
-
-  function loadPack(){
-    try { return JSON.parse(localStorage.getItem(KEY_PACK)) || DEFAULT_ITEMS; }
-    catch(e){ return DEFAULT_ITEMS; }
-  }
-  function savePack(items){
-    localStorage.setItem(KEY_PACK, JSON.stringify(items));
-  }
-
-  function updateProgress(items){
-    const total = items.length || 0;
-    const done = items.filter(it=>it.done).length;
-    const pct = total ? Math.round(done/total*100) : 0;
-    const labels = $$('#packing-progress');
-    labels.forEach(lab=>{
-      if(lab.getAttribute('data-lang')==='en'){
-        lab.textContent = `${done} of ${total} packed (${pct}%)`;
-      }else{
-        lab.textContent = `${done} / ${total} 완료 (${pct}%)`;
+    function loadPack() {
+      try {
+        return JSON.parse(localStorage.getItem(KEY_PACK)) || DEFAULT_ITEMS;
+      } catch(e) {
+        return DEFAULT_ITEMS;
       }
-    });
-    const bar = $('#packing-progress-bar');
-    if(bar) bar.style.width = pct + '%';
-  }
+    }
+    function savePack(itms) {
+      localStorage.setItem(KEY_PACK, JSON.stringify(itms));
+    }
+    function updateProgress(itms) {
+      const total = itms.length;
+      const done = itms.filter(i=>i.done).length;
+      const pct = total ? Math.round(done/total*100) : 0;
+      $$("[id=packing-progress]").forEach(l=>{
+        l.getAttribute("data-lang")==="en"?
+          l.textContent = `${done} of ${total} packed (${pct}%)`:
+          l.textContent = `${done} / ${total} 완료 (${pct}%)`;
+      });
+      const bar = $("#packing-progress-bar");
+      if(bar) bar.style.width = pct + "%";
+    }
 
-  function initPacking(){
-    const unpacked = $('#packing-list-unpacked');
-    const packed = $('#packing-list-packed');
-    if(!unpacked || !packed) return;
-    let items = loadPack();
-    render();
+    function initPacking() {
+      items = loadPack();
+      const unpacked = $("#packing-list-unpacked");
+      const packed = $("#packing-list-packed");
+      if(!unpacked || !packed) return;
 
-    function render(){
-      unpacked.innerHTML='';
-      packed.innerHTML='';
-      items.forEach((it, idx)=>{
-        const row = document.createElement('div');
-        row.className='packing-item' + (it.done ? ' packed' : '');
-        if(!it.done){
-          // Unpacked list
-          row.innerHTML = `
-            <input type="checkbox" data-idx="${idx}" class="chk">
-            <button class="qty-btn dec" data-idx="${idx}" aria-label="decrease">–</button>
-            <input type="number" min="0" value="${it.qty||0}" data-idx="${idx}" class="qty">
-            <button class="qty-btn inc" data-idx="${idx}" aria-label="increase">+</button>
-            <span class="name">
-              <span data-lang="en">${it.name_en}</span>
-              <span data-lang="ko">${it.name_ko}</span>
-            </span>
-            <span class="badge">${it.note||''}</span>
-            <span style="margin-left:auto;display:flex;gap:6px">
-              <button class="qty-btn del" data-idx="${idx}" aria-label="delete">✕</button>
-            </span>
-          `;
-          unpacked.appendChild(row);
-        } else {
-          // Packed list (checked, disabled, crossed off)
-          row.innerHTML = `
-            <input type="checkbox" data-idx="${idx}" class="chk" checked>
-            <span class="name">
-              <span data-lang="en">${it.name_en}</span>
-              <span data-lang="ko">${it.name_ko}</span>
-            </span>
-            <span style="margin-left:10px; color:var(--muted); font-size:.95em;">×${it.qty||0}</span>
-            <span class="badge">${it.note||''}</span>
-          `;
-          // Disable the checkbox for visual difference (but allow click to uncheck)
-          row.querySelector('input[type="checkbox"]').disabled = false;
-          packed.appendChild(row);
+      function render() {
+        unpacked.innerHTML = "";
+        packed.innerHTML = "";
+        items.forEach((it, idx) => {
+          const row = document.createElement("div");
+          row.className = "packing-item" + (it.done ? " packed" : "");
+          if(!it.done){
+            row.innerHTML = `
+              <input type="checkbox" data-idx="${idx}" class="chk">
+              <button class="qty-btn dec" data-idx="${idx}" aria-label="decrease">–</button>
+              <input type="number" min="0" value="${it.qty || 0}" data-idx="${idx}" class="qty">
+              <button class="qty-btn inc" data-idx="${idx}" aria-label="increase">+</button>
+              <span class="name">
+                <span data-lang="en">${it.name_en}</span>
+                <span data-lang="ko">${it.name_ko}</span>
+              </span>
+              <span class="badge">${it.note || ""}</span>
+              <span style="margin-left:auto;display:flex;gap:6px">
+                <button class="qty-btn del" data-idx="${idx}" aria-label="delete">✕</button>
+              </span>
+            `;
+            unpacked.appendChild(row);
+          } else {
+            row.innerHTML = `
+              <input type="checkbox" data-idx="${idx}" class="chk" checked>
+              <span class="name">
+                <span data-lang="en">${it.name_en}</span>
+                <span data-lang="ko">${it.name_ko}</span>
+              </span>
+              <span style="margin-left:10px; color:var(--muted); font-size:.95em;">×${it.qty || 0}</span>
+              <span class="badge">${it.note || ""}</span>
+            `;
+            row.querySelector("input[type='checkbox']").disabled = false;
+            packed.appendChild(row);
+          }
+        });
+        $$("[data-lang]:not(.lang-switch *)").forEach(el => {
+          el.style.display = el.getAttribute("data-lang")===lang?"":"none";
+        });
+        updateProgress(items);
+
+        // Set listeners
+        unpacked.querySelectorAll("input.chk").forEach(cb => cb.addEventListener("change", e=>{
+          items[+e.target.dataset.idx].done = e.target.checked;
+          savePack(items);
+          render();
+        }));
+        packed.querySelectorAll("input.chk").forEach(cb => cb.addEventListener("change", e=>{
+          items[+e.target.dataset.idx].done = e.target.checked;
+          savePack(items);
+          render();
+        }));
+        unpacked.addEventListener("change", e=>{
+          if(e.target.classList.contains("qty")){
+            items[+e.target.dataset.idx].qty = +e.target.value;
+            savePack(items);
+            render();
+          }
+        });
+        unpacked.addEventListener("click", e=>{
+          let idx = +e.target.dataset.idx;
+          if(e.target.classList.contains("inc")){
+            items[idx].qty = (items[idx].qty||0) + 1;
+            savePack(items);
+            render();
+          } else if(e.target.classList.contains("dec")){
+            items[idx].qty = Math.max(0,(items[idx].qty||0)-1);
+            savePack(items);
+            render();
+          } else if(e.target.classList.contains("del")){
+            items.splice(idx,1);
+            savePack(items);
+            render();
+          }
+        });
+      }
+      render();
+
+      const form = $("#packing-add");
+      if(form) {
+        form.addEventListener("submit", e => {
+          e.preventDefault();
+          let nameEn = $("#add-en").value.trim();
+          let nameKo = $("#add-ko").value.trim();
+          let qty = +($("#add-qty").value || 1);
+          if(!nameEn && !nameKo) return;
+          items.push({name_en: nameEn||nameKo, name_ko: nameKo||nameEn, qty: qty, done: false});
+          savePack(items);
+          $("#add-en").value = "";
+          $("#add-ko").value = "";
+          $("#add-qty").value = "1";
+          render();
+        });
+      }
+      $$(".js-export").forEach(btn => btn.addEventListener("click", () => {
+        const blob = new Blob([JSON.stringify(items,null,2)],{type:"application/json"});
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "packing_list.json";
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        URL.revokeObjectURL(url);
+      }));
+      $$(".js-reset").forEach(btn => btn.addEventListener("click", () => {
+        if(confirm("Reset packing list to defaults? / 기본 목록으로 초기화할까요?")) {
+          items = JSON.parse(JSON.stringify(DEFAULT_ITEMS));
+          savePack(items);
+          render();
         }
-      });
-      const lang = localStorage.getItem(KEY_LANG) || 'en';
-      $$('[data-lang]:not(.lang-switch *)').forEach(el=>{
-        el.style.display = (el.getAttribute('data-lang')===lang) ? '' : 'none';
-      });
-      updateProgress(items);
-      // listeners:
-      // Unpacked:
-      unpacked.querySelectorAll('input.chk').forEach(box=>{
-        box.addEventListener('change',e=>{
-          const idx = +e.target.dataset.idx;
-          items[idx].done = e.target.checked;
-          savePack(items);
-          render();
-        });
-      });
-      // Packed:
-      packed.querySelectorAll('input.chk').forEach(box=>{
-        box.addEventListener('change',e=>{
-          // Uncheck: move to left
-          const idx = +e.target.dataset.idx;
-          items[idx].done = e.target.checked;
-          savePack(items);
-          render();
-        });
-      });
-      // Quantity and del:
-      unpacked.addEventListener('change', onChange);
-      unpacked.addEventListener('click', onClick);
+      }));
     }
 
-    function onChange(e){
-      const idx = +e.target.dataset.idx;
-      if(e.target.classList.contains('qty')){
-        items[idx].qty = +e.target.value;
-        savePack(items);
-        render();
-      }
-    }
-    function onClick(e){
-      const idx = +e.target.dataset.idx;
-      if(e.target.classList.contains('inc')){
-        items[idx].qty = (items[idx].qty||0)+1;
-        savePack(items);
-        render();
-      } else if(e.target.classList.contains('dec')){
-        items[idx].qty = Math.max(0,(items[idx].qty||0)-1);
-        savePack(items);
-        render();
-      } else if(e.target.classList.contains('del')){
-        items.splice(idx,1);
-        savePack(items);
-        render();
-      }
+    // Leaflet Maps
+
+    function createMarker(map, loc) {
+      const marker = L.marker([loc.lat, loc.lng]).addTo(map);
+      const popupContent = lang === "ko"? loc.name_ko: loc.name_en;
+      marker.bindPopup(`<b>${popupContent}</b>`);
+      marker.bindTooltip(popupContent, {
+        permanent: true,
+        direction: "top",
+        offset: [0, -15],
+        className: "marker-label"
+      }).openTooltip();
+      return marker;
     }
 
-    const form = document.getElementById('packing-add');
-    if(form){
-      form.addEventListener('submit', (e)=>{
-        e.preventDefault();
-        const nameEn = document.getElementById('add-en').value.trim();
-        const nameKo = document.getElementById('add-ko').value.trim();
-        const qty = +(document.getElementById('add-qty').value || 1);
-        if(!nameEn && !nameKo) return;
-        items.push({name_en:nameEn||nameKo, name_ko:nameKo||nameEn, qty:qty, done:false});
-        savePack(items);
-        document.getElementById('add-en').value='';
-        document.getElementById('add-ko').value='';
-        document.getElementById('add-qty').value='1';
-        render();
+    function initMap() {
+      const map = L.map("interactive-map", {minZoom: 12}).setView([52.34, 4.89], 12);
+      L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution: '&copy; OpenStreetMap contributors',
+        maxZoom: 18
+      }).addTo(map);
+
+      const locations = [
+        {lat:52.3079,lng:4.7041,name_en:"IntercityHotel Amsterdam Schiphol Airport",name_ko:"인터시티호텔 암스테르담 스키폴 공항"},
+        {lat:52.3399,lng:4.8661,name_en:"Hoofddorp Station",name_ko:"호프도르프 역"},
+        {lat:52.343,lng:4.8885,name_en:"Amsterdam RAI",name_ko:"암스테르담 RAI"},
+        {lat:52.3374,lng:4.8897,name_en:"RAI Amsterdam – Hall 10",name_ko:"RAI 암스테르담 - 홀 10"}
+      ];
+
+      locations.forEach(loc => createMarker(map, loc));
+    }
+
+    function initAttractionsMap() {
+      const map = L.map("attractions-map", {minZoom: 12}).setView([52.366, 4.89], 13);
+      L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution: "&copy; OpenStreetMap contributors",
+        maxZoom: 18
+      }).addTo(map);
+
+      const attractions = [
+        {lat:52.3862,lng:4.8773,name_en:"Westerpark & Westergasfabriek",name_ko:"웨스터파크 & 웨스터가스파브리크"},
+        {lat:52.3545,lng:4.883,name_en:"De Pijp & Gerard Doustraat area",name_ko:"더 파이프 & 제라드 도우스트라트 지역"},
+        {lat:52.3809,lng:4.8847,name_en:"Noordermarkt",name_ko:"누르더마르크트"},
+        {lat:52.366,lng:4.875,name_en:"Oud‑West + Bellamyplein canal walk",name_ko:"아웃-웨스트 + 벨러미플레인 운하 산책로"},
+        {lat:52.3653,lng:4.9023,name_en:"Hermitage Amsterdam",name_ko:"헤르미타주 암스테르담"},
+        {lat:52.36389,lng:4.89361,name_en:"FOAM (Fotografiemuseum Amsterdam)",name_ko:"FOAM (암스테르담 사진미술관)"},
+        {lat:52.35783,lng:4.88333,name_en:"De Balie",name_ko:"드 발리"},
+        {lat:52.35111,lng:4.93333,name_en:"Frankendael Park",name_ko:"프랑켄다엘 공원"},
+        {lat:52.33075,lng:4.89315,name_en:"Amstelpark",name_ko:"암스텔파크"},
+        {lat:52.3667,lng:4.9225,name_en:"Brouwerij ’t IJ",name_ko:"브로우에라이 ’트 아이"},
+        {lat:52.371,lng:4.875,name_en:"Ten Katemarkt",name_ko:"텐 카테마르크트"}
+      ];
+
+      attractions.forEach(loc => createMarker(map, loc));
+    }
+
+    function initFoodsMap() {
+      const map = L.map("foods-map", {minZoom: 13}).setView([52.37, 4.89], 13);
+      L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution: "&copy; OpenStreetMap contributors",
+        maxZoom: 18,
+      }).addTo(map);
+
+      const foods = [
+        {lat:52.366,lng:4.884,name_en:"Café de Klos",name_ko:"카페 드 클로스"},
+        {lat:52.356,lng:4.895,name_en:"Bazar Amsterdam",name_ko:"바자르 암스테르담"},
+        {lat:52.3718,lng:4.8744,name_en:"Moeders",name_ko:"무더스"},
+        {lat:52.3668,lng:4.8678,name_en:"Foodhallen",name_ko:"푸드할런"},
+        {lat:52.375,lng:4.886,name_en:"Stach",name_ko:"스터치"},
+        {lat:52.371,lng:4.889,name_en:"Friteshuis Vleminckx",name_ko:"프리트하우스 블레민크스"},
+        {lat:52.3712,lng:4.8888,name_en:"The Chicken Bar",name_ko:"더 치킨 바"},
+        {lat:52.373,lng:4.891,name_en:"Kantjil & de Tijger",name_ko:"칸칠 & 드 타이거"},
+        {lat:52.3809,lng:4.8847,name_en:"Café Winkel 43",name_ko:"카페 윈켈 43"},
+        {lat:52.369,lng:4.897,name_en:"Hummus Bistro d&a",name_ko:"후무스 비스트로 d&a"}
+      ];
+
+      foods.forEach(loc => createMarker(map, loc));
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      setLang(lang); // set initial language on page load
+
+      // Language buttons event handlers
+      $$("button[data-l]").forEach(btn => {
+        btn.addEventListener("click", () => setLang(btn.dataset.l));
       });
-    }
 
-    $$('.js-export').forEach(btn=>btn.addEventListener('click', ()=>{
-      const blob = new Blob([JSON.stringify(items, null, 2)], {type:'application/json'});
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url; a.download = 'packing_list.json';
-      document.body.appendChild(a); a.click(); a.remove();
-      URL.revokeObjectURL(url);
-    }));
-    $$('.js-reset').forEach(btn=>btn.addEventListener('click', ()=>{
-      if(confirm('Reset packing list to defaults? / 기본 목록으로 초기화할까요?')){
-        items = JSON.parse(JSON.stringify(DEFAULT_ITEMS));
-        savePack(items);
-        render();
-      }
-    }));
-  }
-})();
+      initPacking();
+      initMap();
+      initAttractionsMap();
+      initFoodsMap();
+
+      
+    });
+    
+    
+  })();
+
 </script>
+
+<script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel">
+const foodSpots = [
+  {name: "Café de Klos", cuisine: "바비큐 립", price: "메인 €20~30", hours: "16시~23시 (화요일 휴무)", reservation: "전화 예약 필수 (현장 대기 많음)"},
+  {name: "Bazar Amsterdam", cuisine: "중동 음식", price: "메인 €15~25", hours: "매일 8시~23시", reservation: "주말 저녁은 예약 추천"},
+  {name: "Moeders", cuisine: "네덜란드 가정식", price: "메인 €18~25", hours: "매일 17시~23시", reservation: "예약: 필수"},
+  {name: "Foodhallen", cuisine: "푸드코트", price: "벤더별 €7~15", hours: "매일 12시~23시", reservation: "예약: 필요 없음"},
+  {name: "Stach", cuisine: "델리", price: "샌드위치 €6~9", hours: "매일 8시~20시", reservation: "예약: 필요 없음"},
+  {name: "Friteshuis Vleminckx", cuisine: "감자튀김", price: "감자튀김 €3~5", hours: "매일 10시~19시", reservation: "예약: 필요 없음"},
+  {name: "The Chicken Bar", cuisine: "치킨", price: "치킨 플래터 €15~25", hours: "매일 12시~22시", reservation: "주말 저녁 예약 추천"},
+  {name: "Kantjil & de Tijger", cuisine: "인도네시아", price: "Rijsttafel 세트 €25~35", hours: "매일 12시~22시", reservation: "온라인 예약 가능"},
+  {name: "Café Winkel 43", cuisine: "애플파이", price: "애플파이 €5, 커피 €3~", hours: "매일 7시~20시", reservation: "예약: 필요 없음 (아침 시간대 추천)"},
+  {name: "Hummus Bistro d&a", cuisine: "이스라엘 음식", price: "메인 €12~20", hours: "화~일 11시~22시 (월요일 휴무)", reservation: "예약: 필요 없음"},
+];
+
+const IconPrice = () => (
+  <svg className="food-info-icon" viewBox="0 0 24 24" width="18" height="18"
+    fill="none" stroke="currentColor" strokeWidth="2"
+    strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="12" cy="12" r="9" />
+    <path d="M12 8c-1.5 0-1.5 4 0 4s1.5-1 1.5-1.5S13 8 12 8z" />
+  </svg>
+);
+
+
+const IconHours = () => (
+  <svg className="food-info-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="12" cy="12" r="10" />
+    <polyline points="12 6 12 12 16 14" />
+  </svg>
+);
+
+
+const IconReservation = () => (
+  <svg className="food-info-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="3" y="10" width="18" height="7" rx="2" ry="2" />
+    <path d="M5 10V7a4 4 0 0 1 4-4 4 4 0 0 1 4 4v3" />
+    <line x1="12" y1="21" x2="12" y2="23" />
+    <line x1="8" y1="23" x2="16" y2="23" />
+  </svg>
+);
+
+
+const FoodSpotCard = ({ spot }) => (
+  <div className="food-card">
+    <strong>{spot.name} <small>({spot.cuisine})</small></strong>
+    <div className="food-info-row"><IconPrice /> <span>가격: {spot.price}</span></div>
+    <div className="food-info-row"><IconHours /> <span>영업시간: {spot.hours}</span></div>
+    <div className="food-info-row"><IconReservation /> <span>예약: {spot.reservation}</span></div>
+  </div>
+);
+
+const FoodInfoGrid = () => {
+  const leftColumn = foodSpots.slice(0,5);
+  const rightColumn = foodSpots.slice(5);
+  return (
+    <div className="food-info-grid">
+      <div className="food-info-column">{leftColumn.map((spot, i) => <FoodSpotCard key={i} spot={spot} />)}</div>
+      <div className="food-info-column">{rightColumn.map((spot, i) => <FoodSpotCard key={i+5} spot={spot} />)}</div>
+    </div>
+  );
+};
+
+ReactDOM.createRoot(document.getElementById('food-info-root')).render(<FoodInfoGrid />);
+</script>
+
+
 </body>
 </html>
+<!--   <div class="grid two">
+    <figure>
+      <a href="https://www.google.com/maps/dir/IntercityHotel+Amsterdam+Schiphol+Airport,+Spark+Ave+1,+2133+LC+Hoofddorp,+Netherlands/RAI%2FAmsterdam,+Europaplein,+Amsterdam,+Netherlands/@52.336371,4.7447001,12z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0x47c5e7ca5f0558af:0x6e3b305eed4f3367!2m2!1d4.6955542!2d52.2899677!1m5!1m1!1s0x47c60a1f63d57e25:0xa08f37a724d09338!2m2!1d4.8886156!2d52.3411906!3e3?entry=ttu&g_ep=EgoyMDI1MDczMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">
+        <img src="map_hotel_to_rai.png.png" alt="Hotel to RAI route map"> 
+      </a>
+      <figcaption data-lang="en">Hotel → RAI (Hall 10) route</figcaption>
+      <figcaption data-lang="ko">호텔 → RAI (Hall 10) 경로</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="maps" class="card">
+  <h2 data-lang="en">Maps</h2>
+  <h2 data-lang="ko">지도</h2>
+
+  <div class="grid two">
+    <figure>
+      <a href="https://umap.openstreetmap.fr/en/map/local-attractions-amsterdam_1264053?scaleControl=false&miniMap=false&scrollWheelZoom=false&zoomControl=true&editMode=disabled&moreControl=true&searchControl=null&tilelayersControl=null&embedControl=null&datalayersControl=true&onLoadPanel=none&captionBar=false&captionMenus=true" target="_blank" rel="noopener noreferrer">" <img src="map_attractions.png.png" alt="Local attractions map"> </a>
+      <figcaption data-lang="en">Local Attractions (11)</figcaption>
+      <figcaption data-lang="ko">로컬 명소 (11)</figcaption>
+    </figure>
+    <figure>
+      <a href="https://umap.openstreetmap.fr/en/map/local-food-places_1264067?scaleControl=false&miniMap=false&scrollWheelZoom=false&zoomControl=true&editMode=disabled&moreControl=true&searchControl=null&tilelayersControl=null&embedControl=null&datalayersControl=true&onLoadPanel=none&captionBar=false&captionMenus=true">"<img src="map_route_food.png.png" alt="Food + route map"></a>
+      <figcaption data-lang="en">Local Food (10) + Hotel→RAI Route</figcaption>
+      <figcaption data-lang="ko">로컬 맛집 (10) + 호텔→RAI 경로</figcaption>
+    </figure>
+  </div>
+</section> -->
