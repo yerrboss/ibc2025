@@ -552,18 +552,31 @@
     function savePack(itms) {
       localStorage.setItem(KEY_PACK, JSON.stringify(itms));
     }
-    function updateProgress(itms) {
-      const total = itms.length;
-      const done = itms.filter(i=>i.done).length;
-      const pct = total ? Math.round(done/total*100) : 0;
-      $$("[id=packing-progress]").forEach(l=>{
-        l.getAttribute("data-lang")==="en"?
-          l.textContent = `${done} of ${total} packed (${pct}%)`:
-          l.textContent = `${done} / ${total} 완료 (${pct}%)`;
-      });
-      const bar = $("#packing-progress-bar");
-      if(bar) bar.style.width = pct + "%";
-    }
+function updateProgress(itms) {
+  const total = itms.length;
+  const done = itms.filter(i=>i.done).length;
+  const pct = total ? Math.round(done/total*100) : 0;
+  $$("[id=packing-progress]").forEach(l=>{
+    l.getAttribute("data-lang")==="en"?
+      l.textContent = `${done} of ${total} packed (${pct}%)`:
+      l.textContent = `${done} / ${total} 완료 (${pct}%)`;
+  });
+  const bar = $("#packing-progress-bar");
+  if(bar) bar.style.width = pct + "%";
+  // --- Confetti trigger logic ---
+  if (total > 0 && done === total && !window._confettiFired) {
+    window._confettiFired = true;
+    confetti({
+      particleCount: 220,
+      spread: 90,
+      origin: { y: 0.7 }
+    });
+  }
+  if (done < total) {
+    window._confettiFired = false; // Reset if the user unpacks something!
+  }
+}
+
 
     function initPacking() {
       items = loadPack();
@@ -853,6 +866,7 @@ const FoodInfoGrid = () => {
 
 ReactDOM.createRoot(document.getElementById('food-info-root')).render(<FoodInfoGrid />);
 </script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
 
 </body>
